@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+  <div
+    class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <form class="space-y-6" method="POST">
+      {% csrf_token %}
+      <h5 class="text-xl font-medium text-gray-900 dark:text-white">Create a Cover Letter</h5>
+      <div>
+        <label for="id_title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+        <input type="text" name="title" id="id_title"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+               placeholder="e.g. cover letter 1" value="{{ coverletter.title }}" required>
+
+      </div>
+      <div>
+        <label for="id_description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+        <input type="text" name="description" id="id_description"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+               placeholder="e.g. Description" value="{{ coverletter.description }}" required>
+
+      <div>
+        <label for="id_owner" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Owner</label>
+        <select name="owner" id="id_owner">
+          {% for value, choice in form.fields.owner.choices %}
+            <option value="{{ value }}">{{  choice }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+
+      <button type="submit"
+              class="w-full text-white bg-pink-800 hover:bg-bg-pink-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-bg-pink-800 dark:hover:bg-pink-900 dark:focus:ring-blue-800">
+        Create
+      </button>
+
+    </form>
+  </div>
+
+{% endblock content %}
