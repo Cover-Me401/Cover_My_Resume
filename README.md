@@ -32,18 +32,16 @@ This program helps users find relevant and recent job listings in the tech indus
 
 ## 📖 Installation
 
-```
-$ python -m venv .venv
+    $ python -m venv .venv
 
-$ source .venv/bin/activate
+    $ source .venv/bin/activate
 
-(.venv) $ pip install -r requirements.txt
-(.venv) $ python manage.py migrate
-(.venv) $ python manage.py createsuperuser
-(.venv) $ python manage.py runserver
+    (.venv) $ pip install -r requirements.txt
+    (.venv) $ python manage.py migrate
+    (.venv) $ python manage.py createsuperuser
+    (.venv) $ python manage.py runserver
 
-# Load the site at http://127.0.0.1:8000
-```
+## Load the site at <http://127.0.0.1:8000>
 
 ## Next Steps
 
